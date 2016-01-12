@@ -7,7 +7,7 @@ class YourBot(telepot.async.Bot):
     @asyncio.coroutine
     def handle(self, msg):
         content_type, chat_type, chat_id = telepot.glance2(msg)
-        print(content_type, chat_type, chat_id)
+        print(content_type, chat_type, chat_id, msg['text'])
         # Do your stuff according to `content_type` ...
             
 TOKEN = sys.argv[1]  # get token from command-line
