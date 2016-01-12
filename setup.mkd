@@ -1,0 +1,38 @@
+To get a working dev version of the repo:
+
+# Install Ubuntu dependencies:
+    sudo apt-get install libpq-dev python-dev postgresql postgresql-contrib
+
+# Setup Postgres
+  Setup postgres user:
+    sudo -u postgres psql postgres
+    \password postgres
+    (exit)
+    
+  Create the DB:
+    sudo -u postgres createdb moop
+
+  You probably also need to fiddle with Postgres authentication conf.
+  Change the line in the file /etc/postgresql/<version>/main/pg_hba.conf from:
+
+    local   all             postgres                                peer
+
+  to:
+
+    local   all             postgres                                md5
+
+  Then restart the postgres service:
+    sudo service postgresql restart
+
+
+# Clone the repository into REPO path
+
+# Create a virtual env somewhere:
+    virtualenv -p /usr/bin/python3 venv_moop
+
+# Activate the virtual env:
+    . venv_moop/bin/activate
+
+# Install the Python dependencies into the virtual env
+    pip install -r REPO/pip_req.txt
+
