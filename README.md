@@ -4,4 +4,4 @@ What is the goal?
 What tech does it use?
 
 
-
+Is it going to make anything great again?
